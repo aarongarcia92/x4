@@ -1,5 +1,3 @@
-//// Exercise 4:  click button to change background.
-
 int r,g,b;
 float button1X=100, button1Y=100, button1W=80, button1H=40;
 int counter=0;
@@ -10,9 +8,9 @@ void setup() {
   reset();
 }
 void reset() {
-  r=  100;
-  g=  200;
-  b=  250;
+  r=  200;
+  g=  150;
+  b=  300;
 }
 
 
@@ -21,11 +19,11 @@ void draw() {
   background( r,g,b );
   showButton( button1X, button1Y, button1W, button1H );
   fill(100,0,0);
-  text( "Click me!", button1X+button1W/4, button1Y+button1H*2/3 );
+  text( "CLICK ME!", button1X+button1W/4, button1Y+button1H*2/3 );
 }
 // Draw the button.
 void showButton( float x, float y, float w, float h ) {
-  fill( 255,255,0 );
+  fill( 200,200,0 );
   rect ( x,y, w,h );
 }
 
@@ -35,12 +33,12 @@ void keyPressed() {
   if (key == 'r') reset();
 }
 void mousePressed() {
-  if ( hit( mouseX,mouseY, 100,100, 50,50 ) ) {
+  if ( hit( mouseX,mouseY, 200,150, 200,100 ) ) {
     counter=  counter+1;
-    if (counter % 2 > 0) {
-      r=  255;
-      g=  50;
-      b=  0;
+    if (counter % 10 > 0) {
+      r=  100;
+      g=  200;
+      b=  10;
     } else {
       reset();
     }
